@@ -3,6 +3,13 @@
 {% block title %}Home{% endblock %}
 
 {% block body %}
+  {% for city in cities %}
+    <ul>
+      <li>
+        {{ city.name }}
+      </li>
+    </ul>
 
+  {% endfor %}
 
 {% endblock %}
