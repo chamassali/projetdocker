@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+  {{ profile.firstName }}
+{% endblock %}
+
+{% block body %}
+
+  <div class="container mt-5 center">
+
+    <div class="card mb-3" style="color: black;">
+      <div class="row no-gutters">
+        <div class="col-md-4">
+          <img src="{{ profile.picture }}" alt="profile picture">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">{{ profile.firstName }}
+              {{ profile.lastName }}</h5>
+            <p class="card-text">Email :
+              {{ profile.email }}</p>
+            <p class="card-text">Summary :
+              {{ profile.summary }}</p>
+            <p class="card-text">
+              Hard skills :
+
+              {% for profile in profiles.skillsHard %}
+                {{ profile }}
+              {% endfor %}
+            </p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+{% endblock %}

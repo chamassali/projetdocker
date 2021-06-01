@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Profile;
+use App\Entity\SkillsSoft;
 use App\Repository\CitiesRepository;
 use App\Repository\ProfileRepository;
 use Symfony\Component\HttpFoundation\Request;
@@ -24,8 +25,14 @@ class HomeController extends AbstractController
     /**
      * @Route("/test/{id<[0-9]+>}/{lastName}-{firstName}", name="profile.show")
      */
-    public function show(Profile $profile): Response
+    public function show(int $id, Profile $profile, ProfileRepository $repo): Response
     {
-        return $this->render('home/show.html.twig', compact('profile'));
+         
+        $profiles = $repo->find($id);
+        
+        return $this->render('home/show.html.twig', [
+            'profiles' => $profiles,
+            'profile' => $profile,
+        ]);
     }
 }
