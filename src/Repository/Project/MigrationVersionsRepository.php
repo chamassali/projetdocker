@@ -12,7 +12,7 @@ use Doctrine\Persistence\ManagerRegistry;
  * @method MigrationVersions[]    findAll()
  * @method MigrationVersions[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class MigrationVersions extends ServiceEntityRepository
+class MigrationVersionsRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {

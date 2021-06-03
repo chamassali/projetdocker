@@ -2,25 +2,25 @@
 
 namespace App\Repository\Project;
 
-use App\Entity\Project\Interview;
+use App\Entity\Project\InterviewType;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @method Interview|null find($id, $lockMode = null, $lockVersion = null)
- * @method Interview|null findOneBy(array $criteria, array $orderBy = null)
- * @method Interview[]    findAll()
- * @method Interview[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method InterviewType|null find($id, $lockMode = null, $lockVersion = null)
+ * @method InterviewType|null findOneBy(array $criteria, array $orderBy = null)
+ * @method InterviewType[]    findAll()
+ * @method InterviewType[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class Interview extends ServiceEntityRepository
+class InterviewtypeRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Interview::class);
+        parent::__construct($registry, InterviewType::class);
     }
 
     // /**
-    //  * @return Interview[] Returns an array of Interview objects
+    //  * @return InterviewType[] Returns an array of InterviewType objects
     //  */
     /*
     public function findByExampleField($value)
@@ -37,7 +37,7 @@ class Interview extends ServiceEntityRepository
     */
 
     /*
-    public function findOneBySomeField($value): ?Interview
+    public function findOneBySomeField($value): ?InterviewType
     {
         return $this->createQueryBuilder('i')
             ->andWhere('i.exampleField = :val')

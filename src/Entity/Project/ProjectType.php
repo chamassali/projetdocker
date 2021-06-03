@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * ProjectType
  *
  * @ORM\Table(name="project_type")
- * @ORM\Entity(repositoryClass="App\Repository\Project\ProjectType")
+ * @ORM\Entity(repositoryClass="App\Repository\Project\ProjectTypeRepository")
  */
 class ProjectType
 {

@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * InterviewType
  *
  * @ORM\Table(name="interview_type")
- * @ORM\Entity(repositoryClass="App\Repository\Project\Interviewtype")
+ * @ORM\Entity(repositoryClass="App\Repository\Project\InterviewtypeRepository")
  */
 class InterviewType
 {

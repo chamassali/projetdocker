@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Connector
  *
  * @ORM\Table(name="connector")
- * @ORM\Entity(repositoryClass="App\Repository\Project\Connector")
+ * @ORM\Entity(repositoryClass="App\Repository\Project\ConnectorRepository")
  */
 class Connector
 {
