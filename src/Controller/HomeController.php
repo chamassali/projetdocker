@@ -3,7 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Profile\Profile;
-use App\Repository\ProfileRepository;
+use App\Repository\Profile\ProfileRepository;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
