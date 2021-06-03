@@ -2,11 +2,8 @@
 
 namespace App\Controller;
 
-use App\Entity\Profile;
-use App\Entity\SkillsSoft;
-use App\Repository\CitiesRepository;
+use App\Entity\Profile\Profile;
 use App\Repository\ProfileRepository;
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -29,7 +26,7 @@ class HomeController extends AbstractController
     {
          
         $profiles = $repo->find($id);
-        
+
         return $this->render('home/show.html.twig', [
             'profiles' => $profiles,
             'profile' => $profile,

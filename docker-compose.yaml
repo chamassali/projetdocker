@@ -14,6 +14,7 @@ services:
     volumes:
       - ./var/assets/bdd_profile/profile.sql:/docker-entrypoint-initdb.d/profile.sql
       - ./var/assets/bdd_profile/geo.sql:/docker-entrypoint-initdb.d/geo.sql
+      - ./var/assets/bdd_project/project.sql:/docker-entrypoint-initdb.d/project.sql
 
   apache-php:
     container_name: apache-php
