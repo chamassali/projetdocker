@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use Nzo\UrlEncryptorBundle\Encryptor\Encryptor;
+use Nzo\UrlEncryptorBundle\Annotations\ParamDecryptor;
 use App\Entity\Profile\Profile;
 use App\Repository\Profile\ProfileRepository;
 use Symfony\Component\HttpFoundation\Response;
@@ -10,6 +12,13 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class HomeController extends AbstractController
 {
+    private $encryptor;
+
+    public function __construct(Encryptor $encryptor)
+    {
+        $this->encryptor = $encryptor;
+    }
+
     /**
      *@Route("/", name="home", methods={"GET"})
      */
@@ -20,11 +29,11 @@ class HomeController extends AbstractController
     }
 
     /**
-     * @Route("/test/{id<[0-9]+>}/{lastName}-{firstName}", name="profile.show")
+     * @ParamDecryptor(params={"id", "bar"})
+     * @Route("/test/{id}/{lastName}-{firstName}", name="profile.show")
      */
-    public function show(int $id, Profile $profile, ProfileRepository $repo): Response
+    public function show($id, Profile $profile, ProfileRepository $repo): Response
     {
-         
         $profiles = $repo->find($id);
 
         return $this->render('home/show.html.twig', [

@@ -2,9 +2,9 @@
 
 namespace App\Entity\Profile;
 
-use App\Entity\PriceUnit;
-use App\Entity\ProfileType;
-use App\Entity\ProfileState;
+use App\Entity\Profile\PriceUnit;
+use App\Entity\Profile\ProfileType;
+use App\Entity\Profile\ProfileState;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
 

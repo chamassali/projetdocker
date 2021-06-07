@@ -17,22 +17,32 @@
           <div class="card-body">
             <h5 class="card-title">{{ profile.firstName }}
               {{ profile.lastName }}</h5>
-            <p class="card-text"><b>Email :</b>
+            <p class="card-text">
+              <b>Email :</b>
               {{ profile.email }}</p>
-            <p class="card-text"><b>Summary :</b>
+            <p class="card-text">
+              <b>Summary :</b>
               {{ profile.summary }}</p>
             <p class="card-text">
               <b>Hard skills :</b>
-              {% for pr in profile.skillsHard.list %}
-                {{ pr }}
-              {% endfor %}
+              {% if profile.skillsHard is null %}
+                Pas de skills
+              {% else %}
+                {% for pr in profile.skillsHard.list %}
+                  {{ pr }}
+                {% endfor %}
+              {% endif %}
             </p>
 
             <p class="card-text">
-              <b>Soft skills :</b>
-              {% for pr in profile.skillsSoft.list %}
-                {{ pr }}
-              {% endfor %}
+            <b>Soft skills :</b>
+              {% if profile.skillsSoft is null %}
+                Pas de skills
+              {% else %}
+                {% for pr in profile.skillsSoft.list %}
+                  {{ pr }}
+                {% endfor %}
+              {% endif %}
             </p>
 
           </div>
